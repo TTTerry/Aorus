@@ -1,0 +1,71 @@
+#pragma once
+
+
+// CMoniEditDlg 对话框
+
+class CMoniEditDlg : public CUiDlg
+{
+	typedef enum _MONIEDIT_BTN_ID
+	{
+		BTN_MONIEDIT_CLOSE,
+		BTN_MONIEDIT_ALL,
+		BTN_MONIEDIT_POWER,
+		BTN_MONIEDIT_CPU_USAGE,
+		BTN_MONIEDIT_GPU_CLOCK,
+		BTN_MONIEDIT_GPU_VOLTAGE,
+		BTN_MONIEDIT_GPU_USAGE,
+		BTN_MONIEDIT_GPU_TEMPERATURE,
+		BTN_MONIEDIT_GPU_FANSPDPERCENT,
+		BTN_MONIEDIT_GPU_FANSPDRPM,
+		BTN_MONIEDIT_VRAM_CLOCK,
+		BTN_MONIEDIT_VRAM_USAGE,
+		BTN_MONIEDIT_LOG_TO_FILE,
+		BTN_MONIEDIT_MS_UP,
+		BTN_MONIEDIT_MS_DOWN,
+		BTN_MONIEDIT_APPLY,
+		BTN_MONIEDIT_NUM
+	};
+	typedef enum _MONIEDIT_STC_ID
+	{
+		STC_MONIEDIT_ALL,
+		STC_MONIEDIT_CPU_CLOCK,
+		STC_MONIEDIT_CPU_USAGE,
+		STC_MONIEDIT_GPU_CLOCK,
+		STC_MONIEDIT_GPU_VOLTAGE,
+		STC_MONIEDIT_GPU_USAGE,
+		STC_MONIEDIT_GPU_TEMPERATURE,
+		STC_MONIEDIT_GPU_FANSPDPERCENT,
+		STC_MONIEDIT_GPU_FANSPDRPM,
+		STC_MONIEDIT_VRAM_CLOCK,
+		STC_MONIEDIT_VRAM_USAGE,
+        STC_MONIEDIT_HW_POLLING,
+		STC_MONIEDIT_LOG_TO_FILE,
+		STC_MONIEDIT_CAPTION,
+		STC_MONIEDIT_NUM
+	};
+	DECLARE_DYNAMIC(CMoniEditDlg)
+
+public:
+	CMoniEditDlg(CWnd* pParent = NULL);   // 标准构造函数
+	virtual ~CMoniEditDlg();
+	void InitState();
+	void SetParent(CUiDlg* pParent);
+	afx_msg void OnMoving(UINT fwSide, LPRECT pRect);
+// 对话框数据
+	enum { IDD = IDD_MONI_EDIT_DIALOG };
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+	virtual BOOL OnInitDialog();
+	afx_msg LRESULT OnUiButtonClicked(WPARAM wParam, LPARAM lParam);
+	
+	void Ui();
+	void UiMain();
+	DECLARE_MESSAGE_MAP()
+private:
+	CString m_sLogFile;
+	CUiStatic m_stc[STC_MONIEDIT_NUM];
+	CUiButton m_btn[BTN_MONIEDIT_NUM];
+	CUiEdit	m_edit;
+	CUiDlg*	m_pParentWnd;
+};

@@ -1,0 +1,64 @@
+#pragma once
+
+
+// CSettingDlg 对话框
+
+class CSettingDlg : public CUiDlg
+{
+	DECLARE_DYNAMIC(CSettingDlg)
+	typedef enum _SETTING_BTN_ID
+	{
+		BTN_SETTING_CLOSE,
+		BTN_SETTING_GENETAL,
+		BTN_SETTING_VGA,
+		BTN_SETTING_START_WITH_WINDOWS,
+		BTN_SETTING_START_MINI,
+		BTN_SETTING_MIN_TO_TRAY,
+		BTN_SETTING_AUTO_UPDATE,
+		BTN_SETTING_CHECK_FOR_UPDATE_GENERAL,
+		BTN_SETTING_CHECK_FOR_UPDATE_BIOS,
+		BTN_SETTING_CHECK_FOR_UPDATE_DRIVER,
+		BTN_SETTING_OK,
+		BTN_SETTING_CANCEL,
+		BTN_SETTING_CONTACT,
+		BTN_SETTING_NUM
+	};
+	typedef enum _SETTING_STC_ID
+	{
+		STC_SETTING_GENERAL_PAD,
+		STC_SETTING_VGA_PAD,
+		STC_SETTING_CAPTION,
+		STC_SETTING_START_WITH_WINDOWS,
+		STC_SETTING_START_MIN,
+		STC_SETTING_MIN_TO_TRAY,
+		STC_SETTING_AUTO_CHECK_FOR_UPDATES,
+		STC_SETTING_LAST_CHECKED_ON,
+		STC_SETTING_BIOSVER,
+		STC_SETTING_DRIVERVER,
+		STC_SETTING_BIOSVER_INFO,
+		STC_SETTING_DRIVERVER_INFO,
+		STC_SETTING_NUM
+	};
+public:
+	CSettingDlg(CWnd* pParent = NULL);   // 标准构造函数
+	virtual ~CSettingDlg();
+	void Initstate();
+
+// 对话框数据
+	enum { IDD = IDD_VGA_SETTING };
+
+protected:
+	virtual void DoDataExchange(CDataExchange* pDX);    // DDX/DDV 支持
+	afx_msg LRESULT OnUiButtonClicked(WPARAM wParam, LPARAM lParam);
+	virtual BOOL OnInitDialog();
+	void Ui();
+	void UiMain();
+	DECLARE_MESSAGE_MAP()
+private:
+	CFont m_font11u;
+	HANDLE	m_hFont;
+	CUiButton m_btn[BTN_SETTING_NUM];
+	CUiStatic m_stc[STC_SETTING_NUM];
+public:
+	afx_msg void OnMoving(UINT fwSide, LPRECT pRect);
+};

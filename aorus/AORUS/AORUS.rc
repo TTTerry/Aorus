@@ -1,0 +1,590 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#include ""res\\AORUS.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""     // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Icon\\MAINICON.ico"
+IDR_MAINFRAME1          ICON                    "res\\Icon\\OC_GURU(32X32).ico"
+IDR_MAINFRAME2          ICON                    "res\\Icon\\OC_GURU(48X48).ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_VGA_HOME_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_VGA_DISPLAYCLK_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_VGA_LED_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_VGA_PROF_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_VGA_CUSTOMIZED_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_VGA_SETTING DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_REMOTECTR_SETTING DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_VGA_MONITORING DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_MONI_CHILD DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_MONI_EDIT_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_LED_IXEB_DIALOG DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DLG_INSERT DIALOGEX 0, 0, 316, 183
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_VGAPRO_ADDFILE      BITMAP                  "res\\Ui\\vga\\add icon on.bmp"
+IDB_VGAPRO_ADDFILEOFF   BITMAP                  "res\\Ui\\vga\\add icon off.bmp"
+IDB_AORUS_LOGO          BITMAP                  "res\\Ui\\vga\\AORUS LOGO.bmp"
+IDB_MAIN_BG             BITMAP                  "res\\Ui\\vga\\background.bmp"
+IDB_HOME_CLOSEON        BITMAP                  "res\\Ui\\vga\\close icon on.bmp"
+IDB_HOME_CPUCOOLEROFF   BITMAP                  "res\\Ui\\vga\\cpucooler iconoff.bmp"
+IDB_HOME_CPUCOOLERON    BITMAP                  "res\\Ui\\vga\\cpucooler iconon.bmp"
+IDB_HOME_CASEOFF        BITMAP                  "res\\Ui\\vga\\case iconoff.bmp"
+IDB_HOME_CASEON         BITMAP                  "res\\Ui\\vga\\case iconon.bmp"
+IDB_HOME_HEADSETOFF     BITMAP                  "res\\Ui\\vga\\headset iconoff.bmp"
+IDB_HOME_HEADSETON      BITMAP                  "res\\Ui\\vga\\headset iconon.bmp"
+IDB_CUSTOMIZE_BG        BITMAP                  "res\\Ui\\vga\\customized bkg.bmp"
+IDB_GIGABYTE_LOGO       BITMAP                  "res\\Ui\\vga\\GIGABYTE LOGO.bmp"
+IDB_HOME_SETTINGON      BITMAP                  "res\\Ui\\vga\\setting on.bmp"
+IDB_HOME_CARDSEL        BITMAP                  "res\\Ui\\vga\\下拉選單.bmp"
+IDB_HOME_REMOTEON       BITMAP                  "res\\Ui\\vga\\remote control icon on.bmp"
+IDB_HOME_MINON          BITMAP                  "res\\Ui\\vga\\縮小 icon on.bmp"
+IDB_HOME_VGAOFF         BITMAP                  "res\\Ui\\vga\\vga iconoff.bmp"
+IDB_HOME_VGAON          BITMAP                  "res\\Ui\\vga\\vga iconon.bmp"
+IDB_HOME_ENTERPRO_OFF   BITMAP                  "res\\Ui\\vga\\Quick menu off.bmp"
+IDB_HOME_ENTERPRO_ON    BITMAP                  "res\\Ui\\vga\\Quick menu on.bmp"
+IDB_HOME_BACKHOME_OFF   BITMAP                  "res\\Ui\\vga\\Quick menu home off.bmp"
+IDB_HOME_BACKHOME_ON    BITMAP                  "res\\Ui\\vga\\Quick menu home on.bmp"
+IDB_HOME_FANSTOP_OFF    BITMAP                  "res\\Ui\\vga\\Quick menu active icon.bmp"
+IDB_HOME_MONIT_OFF      BITMAP                  "res\\Ui\\vga\\Quick menu monitor off.bmp"
+IDB_HOME_FANSTOP_ON     BITMAP                  "res\\Ui\\vga\\Quick menu semi icon.bmp"
+IDB_HOME_MONIT_ON       BITMAP                  "res\\Ui\\vga\\Quick menu monitor on.bmp"
+IDB_ARROW_DOWN          BITMAP                  "res\\Ui\\vga\\arrow.bmp"
+IDB_VGAHOME_BG1         BITMAP                  "res\\Ui\\vga\\EasyModeBg.bmp"
+IDB_VGAHOME_BG2         BITMAP                  "res\\Ui\\vga\\displayclk_bg.bmp"
+IDB_MODEBTN_L1          BITMAP                  "res\\Ui\\vga\\Level01.bmp"
+IDB_MODEBTN_L2          BITMAP                  "res\\Ui\\vga\\Level02.bmp"
+IDB_MODEBTN_L3          BITMAP                  "res\\Ui\\vga\\Level03.bmp"
+IDB_MODEBTN_L4          BITMAP                  "res\\Ui\\vga\\Level04.bmp"
+IDB_MODEBTN_L5          BITMAP                  "res\\Ui\\vga\\Level05.bmp"
+IDB_MODEBTN_L6          BITMAP                  "res\\Ui\\vga\\Level06.bmp"
+IDB_MODEBTN_L7          BITMAP                  "res\\Ui\\vga\\Level07.bmp"
+IDB_MODEBTN_L8          BITMAP                  "res\\Ui\\vga\\Level08.bmp"
+IDB_MODEBTN_L9          BITMAP                  "IDB_MODEBTN_L9.BMP"
+IDB_MODEBTN_L10         BITMAP                  "res\\Ui\\vga\\Level10.bmp"
+IDB_MODEBTN_L11         BITMAP                  "res\\Ui\\vga\\Level11.bmp"
+IDB_MODEBTN_L12         BITMAP                  "res\\Ui\\vga\\Level12.bmp"
+IDB_MODEBTN_L13         BITMAP                  "res\\Ui\\vga\\Level13.bmp"
+IDB_LED_BG              BITMAP                  "res\\Ui\\vga\\LED_BG.bmp"
+IDB_LED_BG_COLOR        BITMAP                  "res\\Ui\\vga\\LED_BG_COLOR.bmp"
+IDB_LED_BGCOMMON        BITMAP                  "res\\Ui\\vga\\LED_BG_COMMON.bmp"
+IDB_LED_BG_PROFILE      BITMAP                  "res\\Ui\\vga\\LED_BG_PROFILE.bmp"
+IDB_VGALED_EFFECTS_OFF  BITMAP                  "res\\Ui\\vga\\off.bmp"
+IDB_VGALED_EFFECTS_ON   BITMAP                  "res\\Ui\\vga\\on.bmp"
+IDB_CHECKBOX_CHECKED    BITMAP                  "res\\Ui\\vga\\方塊選取.bmp"
+IDB_BTN_ON              BITMAP                  "res\\Ui\\vga\\button on.bmp"
+IDB_VGALED_COMB_NORMAL  BITMAP                  "res\\Ui\\vga\\下拉選單.bmp"
+IDB_SLIDERBAR_OFF       BITMAP                  "res\\Ui\\vga\\拉霸鈕off.bmp"
+IDB_SLIDERBAR_ON        BITMAP                  "res\\Ui\\vga\\拉霸鈕on.bmp"
+IDB_SLIDERBG_OFF        BITMAP                  "res\\Ui\\vga\\拉霸底.bmp"
+IDB_SLIDERBG_ON         BITMAP                  "res\\Ui\\vga\\拉霸底on.bmp"
+IDB_SLIDER_RGBBAR       BITMAP                  "res\\Ui\\vga\\clr_sli_bar.bmp"
+IDB_VGA_PROF_BG         BITMAP                  "res\\Ui\\vga\\professional mode bkg.bmp"
+IDB_VGA_PROF_NBG        BITMAP                  "res\\Ui\\vga\\professional mode bkg nv.bmp"
+IDB_BTN_DEC_ON          BITMAP                  "res\\Ui\\vga\\minus icon on.bmp"
+IDB_BTN_INC_ON          BITMAP                  "res\\Ui\\vga\\plus icon on.bmp"
+IDB_VGAPRO_SAVEFILE     BITMAP                  "res\\Ui\\vga\\safe icon on.bmp"
+IDB_VGAPRO_SAVEFILEOFF  BITMAP                  "res\\Ui\\vga\\safe icon off.bmp"
+IDB_VGAPRO_DELETEFILE   BITMAP                  "res\\Ui\\vga\\垃圾桶icon on.bmp"
+IDB_VGAPRO_DELETEFILEOFF BITMAP                  "res\\Ui\\vga\\垃圾桶icon off.bmp"
+IDB_VGAPRO_EDITON       BITMAP                  "res\\Ui\\vga\\edit icon on.bmp"
+IDB_VGAPRO_EDITOFF      BITMAP                  "res\\Ui\\vga\\edit icon off.bmp"
+IDB_VGAPRO_UNLOCK_ON    BITMAP                  "res\\Ui\\vga\\unlock icon.bmp"
+IDB_VGAPRO_UNLINK_ON    BITMAP                  "res\\Ui\\vga\\unlink icon.bmp"
+IDB_VGAPRO_LINK_ON      BITMAP                  "res\\Ui\\vga\\link icon.bmp"
+IDB_SMALLBTN_ON         BITMAP                  "res\\Ui\\vga\\small button on.bmp"
+IDB_SMALLBTN_OFF        BITMAP                  "res\\Ui\\vga\\small button off.bmp"
+IDB_MIDDLEBTN_ON        BITMAP                  "res\\Ui\\vga\\middle button on.bmp"
+IDB_MIDDLEBTN_OFF       BITMAP                  "res\\Ui\\vga\\middle button off.bmp"
+IDB_VGAPRO_SLDBG_ON     BITMAP                  "res\\Ui\\vga\\professional mode 拉霸on bkg.bmp"
+IDB_BIGBTN_ON           BITMAP                  "res\\Ui\\vga\\big button on.bmp"
+IDB_REMOTE_BG           BITMAP                  "res\\Ui\\vga\\remote control setting bkg.bmp"
+IDB_SETTING_BG          BITMAP                  "res\\Ui\\vga\\setting page bkg_02.bmp"
+IDB_SETTING_TAB_ON      BITMAP                  "res\\Ui\\vga\\setting page on.bmp"
+IDB_SETTING_BTN2_ON     BITMAP                  "res\\Ui\\vga\\setting page button 02 on.bmp"
+IDB_SETTING_BTN2_OFF    BITMAP                  "res\\Ui\\vga\\setting page button 02 off.bmp"
+IDB_OCMODE_BGL1         BITMAP                  "res\\Ui\\vga\\oc modebkg_L1.bmp"
+IDB_OCMODE_BGL2         BITMAP                  "res\\Ui\\vga\\oc modebkg_L2.bmp"
+IDB_OCMODE_BGL3         BITMAP                  "res\\Ui\\vga\\oc modebkg_L3.bmp"
+IDB_OCMODE_BGL4         BITMAP                  "res\\Ui\\vga\\oc modebkg_L4.bmp"
+IDB_OCMODE_BGL5         BITMAP                  "res\\Ui\\vga\\oc modebkg_L5.bmp"
+IDB_OCMODE_BGL6         BITMAP                  "res\\Ui\\vga\\oc modebkg_L6.bmp"
+IDB_OCMODE_BGL7         BITMAP                  "res\\Ui\\vga\\oc modebkg_L7.bmp"
+IDB_OCMODE_BGL8         BITMAP                  "res\\Ui\\vga\\oc modebkg_L8.bmp"
+IDB_OCMODE_BGL9         BITMAP                  "res\\Ui\\vga\\oc modebkg_L9.bmp"
+IDB_OCMODE_BGL10        BITMAP                  "res\\Ui\\vga\\oc modebkg_L10.bmp"
+IDB_OCMODE_BGL11        BITMAP                  "res\\Ui\\vga\\oc modebkg_L11.bmp"
+IDB_OCMODE_BGL12        BITMAP                  "res\\Ui\\vga\\oc modebkg_L12.bmp"
+IDB_OCMODE_BGL13        BITMAP                  "res\\Ui\\vga\\oc modebkg_L13.bmp"
+IDB_GAMINGMODE_BGL1     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L1.bmp"
+IDB_GAMINGMODE_BGL2     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L2.bmp"
+IDB_GAMINGMODE_BGL3     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L3.bmp"
+IDB_GAMINGMODE_BGL4     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L4.bmp"
+IDB_GAMINGMODE_BGL5     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L5.bmp"
+IDB_GAMINGMODE_BGL6     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L6.bmp"
+IDB_GAMINGMODE_BGL7     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L7.bmp"
+IDB_GAMINGMODE_BGL8     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L8.bmp"
+IDB_GAMINGMODE_BGL9     BITMAP                  "res\\Ui\\vga\\gaming_modebg_L9.bmp"
+IDB_SILENTMODE_BGL1     BITMAP                  "res\\Ui\\vga\\Silentmode_bgL1.bmp"
+IDB_SILENTMODE_BGL2     BITMAP                  "res\\Ui\\vga\\Silentmode_bgL2.bmp"
+IDB_SILENTMODE_BGL3     BITMAP                  "res\\Ui\\vga\\Silentmode_bgL3.bmp"
+IDB_USERMODE_BG         BITMAP                  "res\\Ui\\vga\\USERMODE_BG.bmp"
+IDB_LED_CLR1            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR1.bmp"
+IDB_LED_CLR2            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR2.bmp"
+IDB_LED_CLR3            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR3.bmp"
+IDB_LED_CLR4            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR4.bmp"
+IDB_LED_CLR5            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR5.bmp"
+IDB_LED_CLR6            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR6.bmp"
+IDB_LED_CLR7            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR7.bmp"
+IDB_LED_CLR8            BITMAP                  "res\\Ui\\vga\\LED_BTN_CLR8.bmp"
+IDB_HOME_MACRO          BITMAP                  "res\\Ui\\vga\\marco icon.bmp"
+IDB_HOME_POINTER        BITMAP                  "res\\Ui\\vga\\Mouse Pointer.bmp"
+IDB_HOME_MOUSEBUTTON    BITMAP                  "res\\Ui\\vga\\Mouse Button.bmp"
+IDB_HOME_KEYASSIGN      BITMAP                  "res\\Ui\\vga\\KB KeyAssgin.bmp"
+IDB_QUICKMENU_LED       BITMAP                  "res\\Ui\\vga\\Quick menu led.bmp"
+IDB_CARDSEL_COMB_BG     BITMAP                  "res\\Ui\\vga\\cardselcomboxbg.bmp"
+IDB_PROFILESEL_BG       BITMAP                  "res\\Ui\\vga\\profileselbg.bmp"
+IDB_PROFILE_SLIDERBG    BITMAP                  "res\\Ui\\vga\\profile bar bkg.bmp"
+IDB_PROFILE_LIST_BTNDOWN BITMAP                  "res\\Ui\\vga\\profile bar btn down.bmp"
+IDB_PROFILE_LIST_BTNUP  BITMAP                  "res\\Ui\\vga\\profile bar btn up.bmp"
+IDB_MONITORING_BG       BITMAP                  "res\\Ui\\vga\\monitor bkg_02.bmp"
+IDB_MONI2               BITMAP                  "res\\Ui\\vga\\monitor bkg_01.bmp"
+IDB_MONITOR_BTNDOWN_ON  BITMAP                  "res\\Ui\\vga\\monitor scroll down button.bmp"
+IDB_MONITOR_BTNUP_ON    BITMAP                  "res\\Ui\\vga\\monitor scroll up button.bmp"
+IDB_MONI_SCROLL_BAR     BITMAP                  "res\\Ui\\vga\\monitor scroll bar.bmp"
+IDB_MONI_SCROLL_BG      BITMAP                  "res\\Ui\\vga\\monitor scroll bkg.bmp"
+IDB_MONI_BLK            BITMAP                  "res\\Ui\\vga\\monitor table.bmp"
+IDB_VGALED_AORUSLOGO    BITMAP                  "res\\Ui\\vga\\LED_AORUS_LOGO.bmp"
+IDB_CHECKBOX_UNCHECK    BITMAP                  "res\\Ui\\vga\\uncheck.bmp"
+IDB_PROFESSIONAL_SLIDER_BGOFF BITMAP                  "res\\Ui\\vga\\professional_slider_bgoff.bmp"
+IDB_SETTINGPAGE_BTNOFF  BITMAP                  "res\\Ui\\vga\\setting page btn off.bmp"
+IDB_SETTINGPAGE_BTNON   BITMAP                  "res\\Ui\\vga\\setting page btn on.bmp"
+IDB_PROFILE_SLIDERBAR   BITMAP                  "res\\Ui\\vga\\profile_bar.bmp"
+IDB_MONI_EDIT_BG        BITMAP                  "res\\Ui\\vga\\monitoring edit page bkg.bmp"
+IDB_MONI_NUM_UP         BITMAP                  "res\\Ui\\vga\\monitoring page up icon.bmp"
+IDB_MONI_NUM_DOWN       BITMAP                  "res\\Ui\\vga\\monitoring page down icon.bmp"
+IDB_DEVICE_LARROW_ON    BITMAP                  "res\\Ui\\vga\\device_left_on.bmp"
+IDB_DEVICE_LARROW_OFF   BITMAP                  "res\\Ui\\vga\\device_left_off.bmp"
+IDB_DEVICE_RARROW_ON    BITMAP                  "res\\Ui\\vga\\device_right_on.bmp"
+IDB_DEVICE_RARROW_OFF   BITMAP                  "res\\Ui\\vga\\device_right_off.bmp"
+IDB_DEVICE_LINE         BITMAP                  "res\\Ui\\vga\\line.bmp"
+IDB_MBOARD_ON           BITMAP                  "res\\Ui\\vga\\mb iconon.bmp"
+IDB_MBOARD_OFF          BITMAP                  "res\\Ui\\vga\\mb iconoff.bmp"
+IDB_2WAYSLI_ON          BITMAP                  "res\\Ui\\vga\\SLI iconon.bmp"
+IDB_2WAYSLI_OFF         BITMAP                  "res\\Ui\\vga\\SLI iconoff.bmp"
+IDB_MOUSE_ON            BITMAP                  "res\\Ui\\vga\\mouse iconon.bmp"
+IDB_MOUSE_OFF           BITMAP                  "res\\Ui\\vga\\mouse iconoff.bmp"
+IDB_KEYBOARD_ON         BITMAP                  "res\\Ui\\vga\\kb iconon.bmp"
+IDB_KEYBOARD_OFF        BITMAP                  "res\\Ui\\vga\\kb iconoff.bmp"
+IDB_LED_BTN_LCRR        BITMAP                  "res\\Ui\\vga\\LED_CLR_R_BTN.bmp"
+IDB_RGBFUSION           BITMAP                  "res\\Ui\\vga\\RGB_Fusion_Logo.bmp"
+IDB_KBLEDSTYLE_BG       BITMAP                  "res\\Ui\\vga\\KB_LEDSTYLE_BG.bmp"
+IDB_PAN_KB104_ON        BITMAP                  "res\\Ui\\vga\\AK700_KB104_ON.bmp"
+IDB_PAN_KB104_OFF       BITMAP                  "res\\Ui\\vga\\AK700_KB104_OFF.bmp"
+IDB_KBLED_BGBLACK       BITMAP                  "res\\Ui\\vga\\KB_LEDSTYLE_BGBLACK.bmp"
+IDB_RADIO_CHECK         BITMAP                  "res\\Ui\\vga\\radio_checked.bmp"
+IDB_RADIO_UNCHECK       BITMAP                  "res\\Ui\\vga\\radio_unchecked.bmp"
+IDB_KEYASSIGN_MULTIKEY  BITMAP                  "res\\Ui\\vga\\KEYASSIGN_MULTIKEY.bmp"
+IDB_KEYASSIGN_FNKEY     BITMAP                  "res\\Ui\\vga\\KEYASSIGN_FNKEY.bmp"
+IDB_KEYASSIGN_INPUTTEXT BITMAP                  "res\\Ui\\vga\\KEYASSIGN_INPUTTEXT.bmp"
+IDB_KEYASSIGN_MOUSEANDMACRO BITMAP                  "res\\Ui\\vga\\KEYASSIGN_MOUSEANDMACRO.bmp"
+IDB_KEYASSIGN_MIDIAPLAYER BITMAP                  "res\\Ui\\vga\\KEYASSIGN_MIDIAPLAYER.bmp"
+IDB_FUNKEY_CACULATOR_ON BITMAP                  "res\\Ui\\vga\\FunKey caculator on.bmp"
+IDB_FUNKEY_CACULATOR_OFF BITMAP                  "res\\Ui\\vga\\FunKey caculator off.bmp"
+IDB_FUNKEY_MAIL_ON      BITMAP                  "res\\Ui\\vga\\FunKey mail on.bmp"
+IDB_FUNKEY_MAIL_OFF     BITMAP                  "res\\Ui\\vga\\FunKey mail off.bmp"
+IDB_FUNKEY_MEDIAPLAY_ON BITMAP                  "res\\Ui\\vga\\FunKey mediaplay on.bmp"
+IDB_FUNKEY_MEDIAPLAY_OFF BITMAP                  "res\\Ui\\vga\\FunKey mediaplay off.bmp"
+IDB_FUNKEY_MYPC_ON      BITMAP                  "res\\Ui\\vga\\FunKey mypc on.bmp"
+IDB_FUNKEY_MYPC_OFF     BITMAP                  "res\\Ui\\vga\\FunKey mypc off.bmp"
+IDB_FUNKEY_SOUND_ON     BITMAP                  "res\\Ui\\vga\\FunKey sound on.bmp"
+IDB_FUNKEY_SOUND_OFF    BITMAP                  "res\\Ui\\vga\\FunKey sound off.bmp"
+IDB_FUNKEY_WEB_ON       BITMAP                  "res\\Ui\\vga\\FunKey web on.bmp"
+IDB_FUNKEY_WEB_OFF      BITMAP                  "res\\Ui\\vga\\FunKey web off.bmp"
+IDB_MEDIA_NEXT_ON       BITMAP                  "res\\Ui\\vga\\Media next on.bmp"
+IDB_MEDIA_NEXT_OFF      BITMAP                  "res\\Ui\\vga\\Media next off.bmp"
+IDB_MEDIA_PLAY_ON       BITMAP                  "res\\Ui\\vga\\Media play on.bmp"
+IDB_MEDIA_PLAY_OFF      BITMAP                  "res\\Ui\\vga\\Media play off.bmp"
+IDB_MEDIA_PREVIOUS_ON   BITMAP                  "res\\Ui\\vga\\Media previous on.bmp"
+IDB_MEDIA_PREVIOUS_OFF  BITMAP                  "res\\Ui\\vga\\Media previous off.bmp"
+IDB_MEDIA_STOP_ON       BITMAP                  "res\\Ui\\vga\\Media stop on.bmp"
+IDB_MEDIA_STOP_OFF      BITMAP                  "res\\Ui\\vga\\Media stop off.bmp"
+IDB_MEDIA_VOLDOWN_ON    BITMAP                  "res\\Ui\\vga\\Media volDown on.bmp"
+IDB_MEDIA_VOLDOWN_OFF   BITMAP                  "res\\Ui\\vga\\Media volDown off.bmp"
+IDB_MEDIA_VOLUP_ON      BITMAP                  "res\\Ui\\vga\\Media volUp on.bmp"
+IDB_MEDIA_VOLUP_OFF     BITMAP                  "res\\Ui\\vga\\Media volUp off.bmp"
+IDB_MACRO_IMPORT        BITMAP                  "res\\Ui\\vga\\macro_import_on.bmp"
+IDB_MACRO_EXPORT        BITMAP                  "res\\Ui\\vga\\macro_export_on.bmp"
+IDB_MACRO_BTN           BITMAP                  "res\\Ui\\vga\\macro_btn.bmp"
+IDB_MACRO_RECORD        BITMAP                  "res\\Ui\\vga\\marco record.bmp"
+IDB_MACRO_RECORD_ENABLE BITMAP                  "res\\Ui\\vga\\marco record enable.bmp"
+IDB_MACRO_SELECT        BITMAP                  "res\\Ui\\vga\\marco_selected.bmp"
+IDB_MARCO_SCR_BAR       BITMAP                  "res\\Ui\\vga\\mon_scroll_bar.bmp"
+IDB_MARCO_SCR_SLI       BITMAP                  "res\\Ui\\vga\\mon_scroll_bg.bmp"
+IDB_MARCO_SCR_UP        BITMAP                  "res\\Ui\\vga\\mon_scroll_up.bmp"
+IDB_MARCO_SCR_DOWN      BITMAP                  "res\\Ui\\vga\\mon_scroll_down.bmp"
+IDB_MARCO_DELAY         BITMAP                  "res\\Ui\\vga\\icon_delay.bmp"
+IDB_INSERT_ACTION_BG    BITMAP                  "res\\Ui\\vga\\insert_dlg_bg.bmp"
+IDB_PAN_INSERT_CHECKED  BITMAP                  "res\\Ui\\vga\\insert_btn_check.bmp"
+IDB_PAN_INSERT_UNCHECKED BITMAP                  "res\\Ui\\vga\\insert_btn_uncheck.bmp"
+IDB_EDT_INSERT_LINE     BITMAP                  "res\\Ui\\vga\\insert_edit.bmp"
+IDB_KBLED_CLR_CHECKED   BITMAP                  "res\\Ui\\vga\\clr_sel_checked.bmp"
+IDB_KBLED_CLR_UNCHECKED BITMAP                  "res\\Ui\\vga\\clr_sel.bmp"
+IDB_KBLED_BUTTON_CHECKED BITMAP                  "res\\Ui\\vga\\kb_led_checked.bmp"
+IDB_KBLED_BAR_BG_COLOR  BITMAP                  "res\\Ui\\vga\\LED_BAR_BG_COLOR.bmp"
+IDB_KBLED_CMB_ON        BITMAP                  "res\\Ui\\vga\\led_cmb_enable.bmp"
+IDB_KBLED_CMB_OFF       BITMAP                  "res\\Ui\\vga\\led_cmb_disable.bmp"
+IDB_KBLED_CMB_EDIT      BITMAP                  "res\\Ui\\vga\\led_edit_cmb.bmp"
+IDB_KBLED_CMB_UP        BITMAP                  "res\\Ui\\vga\\main_up.bmp"
+IDB_KBLED_CMB_DOWN      BITMAP                  "res\\Ui\\vga\\main_down.bmp"
+IDB_MACRO_COMBOX        BITMAP                  "res\\Ui\\vga\\下拉選單-macro.bmp"
+IDB_RADIO_CHECKTWO      BITMAP                  "res\\Ui\\vga\\radio_checked-two.bmp"
+IDB_RADIO_UNCHECKTWO    BITMAP                  "res\\Ui\\vga\\radio_unchecked-two.bmp"
+IDB_RADIO_CHECKEDONE    BITMAP                  "res\\Ui\\vga\\radio_checked_one.bmp"
+IDB_MOUSE_APPLYOFF      BITMAP                  "res\\Ui\\mouse\\mbtn_apply_off.bmp"
+IDB_MOUSE_APPLYON       BITMAP                  "res\\Ui\\mouse\\mbtn_apply_on.bmp"
+IDB_MOUSE_DEFAULTOFF    BITMAP                  "res\\Ui\\mouse\\mbtn_default_off.bmp"
+IDB_MOUSE_DEFAULTON     BITMAP                  "res\\Ui\\mouse\\mbtn_default_on.bmp"
+IDB_MOUSE_RESETOFF      BITMAP                  "res\\Ui\\mouse\\mbtn_reset_off.bmp"
+IDB_MOUSE_RESETON       BITMAP                  "res\\Ui\\mouse\\mbtn_reset_on.bmp"
+IDB_MOUSE_STATUS1       BITMAP                  "res\\Ui\\mouse\\m3_status1.bmp"
+IDB_MOUSE_STATUS2       BITMAP                  "res\\Ui\\mouse\\m3_status2.bmp"
+IDB_MOUSE_STATUS3       BITMAP                  "res\\Ui\\mouse\\m3_status3.bmp"
+IDB_MOUSE_STATUS4       BITMAP                  "res\\Ui\\mouse\\m3_status4.bmp"
+IDB_MOUSE_STATUS5       BITMAP                  "res\\Ui\\mouse\\m3_status5.bmp"
+IDB_MOUSE_STATUS6       BITMAP                  "res\\Ui\\mouse\\m3_status6.bmp"
+IDB_MOUSE_STATUS7       BITMAP                  "res\\Ui\\mouse\\m3_status7.bmp"
+IDB_MOUSE_STATUS8       BITMAP                  "res\\Ui\\mouse\\m3_status8.bmp"
+IDB_MBTN_LEFT           BITMAP                  "res\\Ui\\mouse\\002_02.bmp"
+IDB_MBTN_MIDDLE         BITMAP                  "res\\Ui\\mouse\\003_02.bmp"
+IDB_MBTN_RIGHT          BITMAP                  "res\\Ui\\mouse\\004_02.bmp"
+IDB_MBTN_DPIINC         BITMAP                  "res\\Ui\\mouse\\005_02.bmp"
+IDB_MBTN_DPIDEC         BITMAP                  "res\\Ui\\mouse\\006_02.bmp"
+IDB_MBTN_FORWARD        BITMAP                  "res\\Ui\\mouse\\007_02.bmp"
+IDB_MBTN_BACKWARD       BITMAP                  "res\\Ui\\mouse\\008_02.bmp"
+IDB_MBTN_M3ON           BITMAP                  "res\\Ui\\mouse\\按鈕on.bmp"
+IDB_MPOINT_M3DPI1_ON    BITMAP                  "res\\Ui\\mouse\\level1.bmp"
+IDB_MPOINT_M3DPI1_OFF   BITMAP                  "res\\Ui\\mouse\\level1off.bmp"
+IDB_MPOINT_M3DPI2_ON    BITMAP                  "res\\Ui\\mouse\\level2.bmp"
+IDB_MPOINT_M3DPI2_OFF   BITMAP                  "res\\Ui\\mouse\\level2off.bmp"
+IDB_MPOINT_M3DPI3_ON    BITMAP                  "res\\Ui\\mouse\\level3.bmp"
+IDB_MPOINT_M3DPI3_OFF   BITMAP                  "res\\Ui\\mouse\\level3off.bmp"
+IDB_MPOINT_M3DPI4_ON    BITMAP                  "res\\Ui\\mouse\\level4.bmp"
+IDB_MPOINT_M3DPI4_OFF   BITMAP                  "res\\Ui\\mouse\\level4off.bmp"
+IDB_MPOINT_M3DPI1_STATUS BITMAP                  "res\\Ui\\mouse\\滑鼠LED 01.bmp"
+IDB_MPOINT_M3DPI2_STATUS BITMAP                  "res\\Ui\\mouse\\滑鼠LED 02.bmp"
+IDB_MPOINT_M3DPI3_STATUS BITMAP                  "res\\Ui\\mouse\\滑鼠LED 03.bmp"
+IDB_MPOINT_M3DPI4_STATUS BITMAP                  "res\\Ui\\mouse\\滑鼠LED 04.bmp"
+IDB_MPOINT_DPI_LINK     BITMAP                  "res\\Ui\\mouse\\mouse_pointer_dpi_link.bmp"
+IDB_SLD_DPI_BAR_ON      BITMAP                  "res\\Ui\\mouse\\橫拉霸鈕.bmp"
+IDB_SLD_DPI_BAR_OFF     BITMAP                  "res\\Ui\\mouse\\橫拉霸鈕off.bmp"
+IDB_SLD_DPI_SLD_BAR_ON  BITMAP                  "res\\Ui\\mouse\\橫拉霸on.bmp"
+IDB_SLD_DPI_SLD_BAR_OFF BITMAP                  "res\\Ui\\mouse\\橫拉霸off.bmp"
+IDB_SLD_REPORT_RATE_ON  BITMAP                  "res\\Ui\\mouse\\橫拉霸大on.bmp"
+IDB_SLD_REPORT_RATE_OFF BITMAP                  "res\\Ui\\mouse\\橫拉霸大off.bmp"
+IDB_SLI_DPI_00          BITMAP                  "res\\Ui\\mouse\\拉霸0.bmp"
+IDB_SLI_DPI_01          BITMAP                  "res\\Ui\\mouse\\拉霸1.bmp"
+IDB_SLI_DPI_02          BITMAP                  "res\\Ui\\mouse\\拉霸2.bmp"
+IDB_SLI_DPI_03          BITMAP                  "res\\Ui\\mouse\\拉霸3.bmp"
+IDB_SLI_DPI_04          BITMAP                  "res\\Ui\\mouse\\拉霸4.bmp"
+IDB_SLI_DPI_05          BITMAP                  "res\\Ui\\mouse\\拉霸5.bmp"
+IDB_SLI_DPI_06          BITMAP                  "res\\Ui\\mouse\\拉霸6.bmp"
+IDB_SLI_DPI_07          BITMAP                  "res\\Ui\\mouse\\拉霸7.bmp"
+IDB_SLI_DPI_08          BITMAP                  "res\\Ui\\mouse\\拉霸8.bmp"
+IDB_SLI_DPI_09          BITMAP                  "res\\Ui\\mouse\\拉霸9.bmp"
+IDB_SLI_DPI_10          BITMAP                  "res\\Ui\\mouse\\拉霸10.bmp"
+IDB_BTN_M3_POINTER_DIP_DEC BITMAP                  "res\\Ui\\mouse\\減號.bmp"
+IDB_BTN_M3_POINTER_DIP_INC BITMAP                  "res\\Ui\\mouse\\加號.bmp"
+IDB_BTN_DECCLICK        BITMAP                  "res\\Ui\\mouse\\main_btn_dec_normal.bmp"
+IDB_BTN_INCCLICK        BITMAP                  "res\\Ui\\mouse\\main_btn_inc_normal.bmp"
+IDB_MBTN_KEYASSIGN      BITMAP                  "res\\Ui\\mouse\\框線03.bmp"
+IDB_MBTN_COMB_LONG      BITMAP                  "res\\Ui\\mouse\\選項bkg.bmp"
+IDB_MBTN_SCR_BAR        BITMAP                  "res\\Ui\\mouse\\拉霸滾輪.bmp"
+IDB_MBTN_SCR_SLI        BITMAP                  "res\\Ui\\mouse\\滑鼠切圖.bmp"
+IDB_MBTN_SCROLL_UP      BITMAP                  "res\\Ui\\mouse\\滾輪往上.bmp"
+IDB_MBTN_SCROLL_DOWN    BITMAP                  "res\\Ui\\mouse\\滾輪往下.bmp"
+IDB_MBTN_MULTIKEY_BG    BITMAP                  "res\\Ui\\mouse\\MOUSE_MULTIKEY_BG.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CUR_HAND            CURSOR                  "res\\Cur\\hand.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_FONT
+//
+
+IDR_MAIN_FONT           RT_FONT                 "res\\Font\\Aldrich-Regular.ttf"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_REMOTECTR_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 309
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 176
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU 
+BEGIN
+    POPUP "AORUS"
+    BEGIN
+        MENUITEM "Open(&O)",                    IDR_MENU_OPEN
+        MENUITEM "Close(&C)",                   IDR_MENU_CLOSE
+    END
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_AORUS_DIALOG DIALOGEX 0, 0, 320, 200
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,1,3,0
+ PRODUCTVERSION 1,1,3,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "Comments", "http://www.gigabyte.com"
+            VALUE "CompanyName", "GIGABYTE Technology Co.,Ltd."
+            VALUE "FileDescription", "AORUS GRAPHICS ENGINE"
+            VALUE "FileVersion", "1, 1, 3, 0"
+            VALUE "InternalName", "AORUS.exe"
+            VALUE "LegalCopyright", "Copyright (c) 2017 GIGABYTE. All rights reserved."
+            VALUE "LegalTrademarks", "GIGABYTE VGA Software Dept."
+            VALUE "OriginalFilename", "AORUS.exe"
+            VALUE "ProductName", "AORUS"
+            VALUE "ProductVersion", "1, 1, 3, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About AORUS..."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#include "res\AORUS.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"     // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

@@ -1,0 +1,1 @@
+﻿extern "C" _declspec(dllexport) LPTSTR GBCPUFunc(DWORD Var1,DWORD Var2,LPTSTR Param1,LPVOID Param2);

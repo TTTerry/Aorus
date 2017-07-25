@@ -1,0 +1,278 @@
+// MoniEditDlg.cpp : 实现文件
+//
+
+#include "stdafx.h"
+#include "AORUS.h"
+#include "MoniEditDlg.h"
+#include "MonitorDlg.h"
+#include "AORUSDlg.h"
+
+
+// CMoniEditDlg 对话框
+
+IMPLEMENT_DYNAMIC(CMoniEditDlg, CUiDlg)
+
+CMoniEditDlg::CMoniEditDlg(CWnd* pParent /*=NULL*/)
+	: CUiDlg(CMoniEditDlg::IDD, pParent)
+{
+	m_pParentWnd = NULL;
+}
+
+CMoniEditDlg::~CMoniEditDlg()
+{
+}
+
+void CMoniEditDlg::DoDataExchange(CDataExchange* pDX)
+{
+	CUiDlg::DoDataExchange(pDX);
+}
+
+
+BEGIN_MESSAGE_MAP(CMoniEditDlg, CUiDlg)
+	ON_MESSAGE(WM_UI_BUTTON_CLICKED, OnUiButtonClicked)
+	ON_WM_MOVING()
+END_MESSAGE_MAP()
+
+
+// CMoniEditDlg 消息处理程序
+BOOL CMoniEditDlg::OnInitDialog()
+{
+	CUiDlg::OnInitDialog();
+	Ui();
+	ModifyStyleEx(WS_EX_APPWINDOW,WS_EX_TOOLWINDOW);
+	return true;
+}
+
+void CMoniEditDlg::Ui()
+{
+	UiMain();
+}
+
+void CMoniEditDlg::UiMain()
+{
+	SetBkBitmap(IDB_MONI_EDIT_BG, 0xff, CLR_TRPT);
+	UI_STATIC stc[] =
+	{	
+		UI_STATIC(this, STC_MONIEDIT_ALL,	CRect(46, 53, 160, 67), CLangX::Get(LANG_MONIEDT_ALL), NULL, CLR_TRPT),
+		/*UI_STATIC(this, STC_MONIEDIT_CPU_CLOCK,	CRect(46, 75, 160, 90), CLangX::Get(LANG_MONIEDT_PWERTAR), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_CPU_USAGE,	CRect(46, 99, 160, 113), CLangX::Get(LANG_MONIEDT_CPUUSG), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_CLOCK,	CRect(46, 123, 160, 136), CLangX::Get(LANG_MONIEDT_GPUCLK), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_VOLTAGE,	CRect(46, 147, 160, 159),CLangX::Get(LANG_MONIEDT_GPUVOL), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_USAGE,	CRect(46, 171, 160, 185), CLangX::Get(LANG_MONIEDT_GPUUSG), NULL, CLR_TRPT),*/
+		UI_STATIC(this, STC_MONIEDIT_CPU_CLOCK,	CRect(46, 171, 160, 185), CLangX::Get(LANG_MONIEDT_PWERTAR), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_CPU_USAGE,	CRect(46, 75, 160, 90), CLangX::Get(LANG_MONIEDT_CPUUSG), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_CLOCK,	CRect(46, 99, 160, 113), CLangX::Get(LANG_MONIEDT_GPUCLK), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_VOLTAGE,	CRect(46, 123, 160, 136),CLangX::Get(LANG_MONIEDT_GPUVOL), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_USAGE,	CRect(46, 147, 160, 159), CLangX::Get(LANG_MONIEDT_GPUUSG), NULL, CLR_TRPT),
+		
+		UI_STATIC(this, STC_MONIEDIT_GPU_TEMPERATURE,	CRect(162, 77, 290, 90), CLangX::Get(LANG_MONIEDT_GPUTEMP), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_FANSPDPERCENT,	CRect(162, 99, 290, 113),CLangX::Get(LANG_MONIEDT_GPUFANSPD_PERCENT), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_GPU_FANSPDRPM,	CRect(162, 123, 290, 136), CLangX::Get(LANG_MONIEDT_GPUFANSPD_RPM), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_VRAM_CLOCK,	CRect(162, 147, 290, 159), CLangX::Get(LANG_MONIEDT_VRAMCLK), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_VRAM_USAGE,	CRect(162, 171, 290, 185), CLangX::Get(LANG_MONIEDT_VRAMUSG), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_HW_POLLING,	CRect( 28, 194, 223, 226), CLangX::Get(LANG_MONIEDT_HAR_POLL_PER), NULL, CLR_TRPT),
+		UI_STATIC(this, STC_MONIEDIT_LOG_TO_FILE,	CRect( 46, 229, 180, 243), CLangX::Get(LANG_MONIEDT_LOGHISTORY_TO_FILE), NULL, CLR_TRPT)
+		
+	};
+	for (int i = STC_MONIEDIT_ALL;i <= STC_MONIEDIT_LOG_TO_FILE;i++)
+	{
+		m_stc[i].CreateStatic(stc[i - (int)STC_MONIEDIT_ALL]);
+		m_stc[i].ModifyCtrlStyle(ST_TOP, ST_VCENTER | ST_LEFT | ST_SINGLELINE);
+		m_stc[i].SetFont(Font(11), CLR_WHITE);
+	}
+	m_stc[STC_MONIEDIT_HW_POLLING].ModifyCtrlStyle(ST_VCENTER | ST_TOP | 
+		(m_stc[STC_MONIEDIT_HW_POLLING].GetCaption().Find(_T("\n")) >= 0 ? ST_SINGLELINE : 0), ST_BOTTOM | ST_LEFT);
+	m_stc[STC_MONIEDIT_CAPTION].CreateStatic(UI_STATIC(this, STC_MONIEDIT_CAPTION,	CRect(14, 10, 120, 29), CLangX::Get(LANG_MONIEDIT_CAPTION), NULL, CLR_TRPT));
+	m_stc[STC_MONIEDIT_CAPTION].ModifyCtrlStyle(0, ST_VCENTER | ST_LEFT | ST_SINGLELINE);
+	m_stc[STC_MONIEDIT_CAPTION].SetFont(Font(13), CLR_MAIN);
+
+	UI_BTN btn[] = 
+	{
+		UI_BTN(this, BTN_MONIEDIT_CLOSE,   CRect(273,  9, 290,  25), &UIBTN_IMAGE(IDB_HOME_CLOSEON,	IDB_HOME_CLOSEON,	IDB_HOME_CLOSEON,	0)),
+		UI_BTN(this, BTN_MONIEDIT_ALL,   CRect(26, 55,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		/*UI_BTN(this, BTN_MONIEDIT_POWER,   CRect(26, 78,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_CPU_USAGE,   CRect(26, 101,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_CLOCK,   CRect(26, 125,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_VOLTAGE,   CRect(26, 149,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_USAGE,   CRect(26, 173,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),*/
+		UI_BTN(this, BTN_MONIEDIT_POWER,   CRect(26, 173,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_CPU_USAGE,   CRect(26, 78,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_CLOCK,   CRect(26, 101,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_VOLTAGE,   CRect(26, 125,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_USAGE,   CRect(26, 149,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		
+		UI_BTN(this, BTN_MONIEDIT_GPU_TEMPERATURE,   CRect(143, 78,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_FANSPDPERCENT,   CRect(143, 101,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_GPU_FANSPDRPM,   CRect(143, 125,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_VRAM_CLOCK,   CRect(143, 149,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_VRAM_USAGE,   CRect(143, 173,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_LOG_TO_FILE,   CRect(26, 231,  0,0),&UIBTN_IMAGE(IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, IDB_CHECKBOX_UNCHECK, 0, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, IDB_CHECKBOX_CHECKED, 0, CLR_TRPT), NULL, BTN_CHECK),
+		UI_BTN(this, BTN_MONIEDIT_MS_UP,   CRect(262, 213,  0,0),&UIBTN_IMAGE(IDB_MONI_NUM_UP, IDB_MONI_NUM_UP, IDB_MONI_NUM_UP, 0, CLR_TRPT)),
+		UI_BTN(this, BTN_MONIEDIT_MS_DOWN,   CRect(262, 220,  0,0),&UIBTN_IMAGE(IDB_MONI_NUM_DOWN, IDB_MONI_NUM_DOWN, IDB_MONI_NUM_DOWN, 0, CLR_TRPT)),
+        UI_BTN(this, BTN_MONIEDIT_APPLY,   CRect(85,  260, 0,  0), &UIBTN_IMAGE(IDB_BIGBTN_ON,	IDB_BIGBTN_ON,	IDB_BIGBTN_ON,	0),&UIBTN_STRING(CLangX::Get(LANG_MONIEDT_APPLY),	CLR_WHITE, CLR_WHITE,CLR_WHITE,0,Font(11))),
+
+	};
+	for(int i=BTN_MONIEDIT_CLOSE; i <= BTN_MONIEDIT_APPLY; i++)
+	{
+		m_btn[i].CreateButton(btn[i]);
+		m_btn[i].SetCursor(IDC_CUR_HAND);
+	}
+
+	m_btn[BTN_MONIEDIT_MS_UP].EnableConsecutiveHits();
+	m_btn[BTN_MONIEDIT_MS_DOWN].EnableConsecutiveHits();
+
+	m_edit.Create(WS_CHILD | WS_VISIBLE | WS_TABSTOP | ES_AUTOHSCROLL | ES_CENTER, CRect(224, 214, 262, 225), this, 1);
+	m_edit.SetFont(Font(8), CLR_WHITE);
+	m_edit.SetBkColor(CLR_GRAY3);
+	m_edit.SetAsIntNumberEdit(5);
+}
+
+LRESULT CMoniEditDlg:: OnUiButtonClicked(WPARAM wParam, LPARAM lParam)
+{
+	switch(wParam)
+	{
+	case BTN_MONIEDIT_CLOSE:
+		{	
+			SetWindowPos(&wndNoTopMost, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
+			((CAORUSDlg*)AfxGetMainWnd())->Enable(TRUE);
+			ShowWindow(SW_HIDE); 
+		}
+		break;
+
+	case BTN_MONIEDIT_ALL:
+		{
+			bool bCheck=m_btn[BTN_MONIEDIT_ALL].IsCheck();
+			for (int i=BTN_MONIEDIT_POWER;i<=BTN_MONIEDIT_VRAM_USAGE;i++)
+			{
+				m_btn[i].SetCheck(bCheck);
+			}
+		}
+		break;
+	case BTN_MONIEDIT_POWER:
+	case BTN_MONIEDIT_CPU_USAGE:
+	case BTN_MONIEDIT_GPU_CLOCK:
+	case BTN_MONIEDIT_GPU_VOLTAGE:
+	case BTN_MONIEDIT_GPU_USAGE:
+	case BTN_MONIEDIT_GPU_TEMPERATURE:
+	case BTN_MONIEDIT_GPU_FANSPDPERCENT:
+	case BTN_MONIEDIT_GPU_FANSPDRPM:
+	case BTN_MONIEDIT_VRAM_CLOCK:
+	case BTN_MONIEDIT_VRAM_USAGE:
+		m_btn[BTN_MONIEDIT_ALL].SetCheck(
+		   m_btn[BTN_MONIEDIT_POWER].IsCheck()
+		&& m_btn[BTN_MONIEDIT_CPU_USAGE].IsCheck()
+		&& m_btn[BTN_MONIEDIT_GPU_FANSPDPERCENT].IsCheck()
+		&& m_btn[BTN_MONIEDIT_GPU_FANSPDRPM].IsCheck()
+		&& m_btn[BTN_MONIEDIT_GPU_CLOCK].IsCheck()
+		&& m_btn[BTN_MONIEDIT_GPU_USAGE].IsCheck()
+		&& m_btn[BTN_MONIEDIT_GPU_VOLTAGE].IsCheck()
+		&& m_btn[BTN_MONIEDIT_VRAM_CLOCK].IsCheck()
+		&& m_btn[BTN_MONIEDIT_GPU_TEMPERATURE].IsCheck()
+		&& m_btn[BTN_MONIEDIT_VRAM_USAGE].IsCheck());
+		break;
+	case BTN_MONIEDIT_LOG_TO_FILE:
+		{
+			SetWindowPos(&wndNoTopMost, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
+			CString sFile = _T("");
+			if(m_btn[BTN_MONIEDIT_LOG_TO_FILE].IsCheck() && !(sFile = BrowseFile(_T("Log Files (*.txt)|*.txt;||"), _T("txt"), FALSE)).IsEmpty())
+			{
+				m_sLogFile = sFile;
+			}
+			else
+			{
+				m_btn[BTN_MONIEDIT_LOG_TO_FILE].SetCheck(false);
+			}
+		}
+		break;
+	case BTN_MONIEDIT_APPLY:
+		{
+			VGA_PARAM_MONISETTING monisetting;
+			monisetting.bPower=m_btn[BTN_MONIEDIT_POWER].IsCheck();
+			monisetting.bCPUsage=m_btn[BTN_MONIEDIT_CPU_USAGE].IsCheck();
+			monisetting.bFanSpd=m_btn[BTN_MONIEDIT_GPU_FANSPDPERCENT].IsCheck();
+			monisetting.bFanRpm=m_btn[BTN_MONIEDIT_GPU_FANSPDRPM].IsCheck();
+			monisetting.bGpuClk=m_btn[BTN_MONIEDIT_GPU_CLOCK].IsCheck();
+			monisetting.bGPUsage=m_btn[BTN_MONIEDIT_GPU_USAGE].IsCheck();
+			monisetting.bGpuVol=m_btn[BTN_MONIEDIT_GPU_VOLTAGE].IsCheck();
+			monisetting.bLogRecord=m_btn[BTN_MONIEDIT_LOG_TO_FILE].IsCheck();
+			monisetting.bMemClk=m_btn[BTN_MONIEDIT_VRAM_CLOCK].IsCheck();
+			monisetting.bMemUsage=m_btn[BTN_MONIEDIT_VRAM_USAGE].IsCheck();
+			monisetting.bMemVol=false;
+			monisetting.bPageUsage = false;
+			monisetting.bCPUClock = false;
+			monisetting.bTemperature=m_btn[BTN_MONIEDIT_GPU_TEMPERATURE].IsCheck();
+			monisetting.sLogFile = m_sLogFile;
+			monisetting.nTimeInterval = (int)m_edit.GetWindowsValue();
+			Aorus()->GetCfg()->SetMoniSetting(monisetting);
+			SetWindowPos(&wndNoTopMost, 0, 0, 0, 0, SWP_NOSIZE | SWP_NOMOVE);
+			//ShowWindow(SW_HIDE);
+			if(NULL != m_pParentWnd)
+			{
+				CMonitorDlg* pMonitor = (CMonitorDlg*)m_pParentWnd;
+				pMonitor->ResetScroll(pMonitor->MoveMoniotr(TRUE));
+				((CAORUSDlg*)AfxGetMainWnd())->Enable(TRUE);
+			}
+			ShowWindow(SW_HIDE);
+		}
+		break;
+	case BTN_MONIEDIT_MS_UP:
+		{
+			int value = (int)m_edit.GetWindowsValue();
+			value+=1000;
+			m_edit.SetWindowsValue(value);
+		}break;
+	case BTN_MONIEDIT_MS_DOWN:
+		{
+			int value = (int)m_edit.GetWindowsValue();
+			if (value>=2000)
+			{
+				value-=1000;
+				m_edit.SetWindowsValue(value);
+			}	
+		}break;
+	}
+	return 1;
+}
+
+void CMoniEditDlg::SetParent(CUiDlg* pParent)
+{
+	m_pParentWnd = pParent;
+}
+
+void CMoniEditDlg::InitState()
+{
+	VGA_PARAM_MONISETTING monisetting;
+	Aorus()->GetCfg()->GetMoniSetting(monisetting);
+	bool bAllCheck = true;
+	bAllCheck = m_btn[BTN_MONIEDIT_POWER].SetCheck(monisetting.bPower) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_CPU_USAGE].SetCheck(monisetting.bCPUsage) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_GPU_FANSPDPERCENT].SetCheck(monisetting.bFanSpd) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_GPU_FANSPDRPM].SetCheck(monisetting.bFanRpm) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_GPU_CLOCK].SetCheck(monisetting.bGpuClk) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_GPU_USAGE].SetCheck(monisetting.bGPUsage) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_GPU_VOLTAGE].SetCheck(monisetting.bGpuVol) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_VRAM_CLOCK].SetCheck(monisetting.bMemClk) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_VRAM_USAGE].SetCheck(monisetting.bMemUsage) && bAllCheck;
+	bAllCheck = m_btn[BTN_MONIEDIT_GPU_TEMPERATURE].SetCheck(monisetting.bTemperature) && bAllCheck;
+	m_btn[BTN_MONIEDIT_LOG_TO_FILE].SetCheck(monisetting.bLogRecord);
+	m_btn[BTN_MONIEDIT_ALL].SetCheck(bAllCheck);
+	m_sLogFile = monisetting.sLogFile;
+	m_edit.SetWindowsValue(monisetting.nTimeInterval);
+}
+void CMoniEditDlg::OnMoving(UINT fwSide, LPRECT pRect)
+{
+	CRect rcdesk,rcRect;
+	GetDesktopWindow()->GetClientRect(rcdesk);
+	CRect newRc(*pRect);
+	if ((pRect->top+newRc.Height())>=rcdesk.bottom)
+	{
+		newRc.MoveToXY(CPoint(pRect->left,rcdesk.bottom-newRc.Height()));
+		pRect->top = newRc.top;
+		pRect->left = newRc.left;
+		pRect->bottom = newRc.bottom;
+		pRect->right = newRc.right;
+	}
+	CUiDlg::OnMoving(fwSide, pRect);
+
+	// TODO: Add your message handler code here
+}

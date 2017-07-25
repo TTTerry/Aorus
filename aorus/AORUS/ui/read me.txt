@@ -1,0 +1,3 @@
+﻿1. 拷贝整个UiClass文件夹到project目录下
+2. 在project的stdafx.h头文件中写入#include "UiClass/UiClass.h"
+3. 调用Ui类
